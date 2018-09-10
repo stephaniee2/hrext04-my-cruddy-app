@@ -4,33 +4,37 @@ $(document).ready(function() {
   $(".add-text-btn").on("click", function(){
 
     // store values
-    let inputKey = $(".user-input-title").val();
-    let inputValue = $(".user-input-body").val();
+    let inputIngredient = $(".ingredient").val();
+    let inputCups = $(".cups").val();
 
     // clear values
-    $(".user-input-title").val("");
-    $(".user-input-body").val("");
+    $(".ingredient").val("");
+    $(".cups").val("");
 
-    console.log(inputKey, inputValue);
+    console.log(inputIngredient, inputCups);
 
-    localStorage.setItem(inputKey, inputValue);
+    localStorage.setItem(inputIngredient, inputCups);
     // data-
-    let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' ' +  localStorage.getItem(inputKey) + '</div>';
+    let itemHtml = '<div class="display-item" data-storage-key="'
+    +inputIngredient+'"> ' + inputCups + ' ' 
+    + localStorage.getItem(inputIngredient) + '</div>';
     $(".display").html(itemHtml);
     //console.log(localStorage);
     // how can we delegate this event to the outer html node?
     // https://learn.jquery.com/events/event-delegation/
 
-    $(".display-item").on("click", function(e){
+    $(".add-text-btn").on("click", function(e){
       // plop the key:value back into the input boxes
+      data.push([inputIngredient, inputCups]);
+      chart.load()
 
       // get the values from the the divs?
       console.log("key=> ", e.target.dataset.storageKey); // user-input-title
       localStorage.getItem(e.target.dataset.storageKey); // user-input-body
 
       // set those values in the form fields
-      $(".user-input-title").val(e.target.dataset.storageKey);
-      $(".user-input-body").val(localStorage.getItem(e.target.dataset.storageKey));
+      $(".ingredient").val(e.target.dataset.storageKey);
+      $(".cups").val(localStorage.getItem(e.target.dataset.storageKey));
     });
 
   });
@@ -47,7 +51,7 @@ $(document).ready(function() {
    $(".del-text-btn").on("click", function() {
      alert('item deleted? check the console'); // maybe change to a window.confirm
      localStorage.removeItem( $('.user-input-title').val() ); // grab the title and plop here
-     $(".user-input-title").val("");
+     $(".ingredient").val("");
      $(".user-input-body").val("");
      // clearing display? what if I have multiple items?
      // after item is removed from local storage, redisplay items from local storage
