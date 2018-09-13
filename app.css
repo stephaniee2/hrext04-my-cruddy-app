@@ -1,8 +1,16 @@
-.recipe-box {
+body {
+    background-image: url('http://humortechblog.com/wp-content/uploads/2015/09/sad-frog.png');
+    background-repeat: no-repeat;
+/*    background-attachment: fixed;*/
+    background-size: 800px 500px;
+}
+
+.to-do {
     border-style: solid;
     border-width: 5px;
 /*    display: flex;*/
 /*    flex-direction: wrap;*/
+    text-align: center;
 }
 .ingredients{
 /*    display: inline;*/
@@ -10,4 +18,7 @@
 #directions-box{
     border-style: solid;
     border-width: 5px;   
+}
+button{
+    margin: 10px;
 }

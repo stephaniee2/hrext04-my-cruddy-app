@@ -3,11 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>My First CRUD App</title>
+  <title>My Sad CRUD App</title>
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.21/c3.css">
-
-    
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
@@ -17,25 +15,22 @@
 </head>
 
 <body>
-  <div class="recipe-box">
-    <div class="ingredients">
-      <div id="chart"></div>
-      <script src="chart.js"></script>
-        <form>
-      <input type="string" id="tasks" placeholder="Enter task">
-      <input type="number" id="hours" placeholder="Enter hours">
+
+  
+    <div class="to-do">
+      <h3>Sad To Do List</h3>
+        
+          <form>
+      <input type="string" id="tasks" placeholder="Enter a sad task">
+      <input type="string" id="deleteTasks" placeholder="Delete a sad task">
         </form>
       <button class="add-task-btn" >add text</button>
       <button class="del-task-btn">delete text</button>
-      <div class="display"></div>
-    </div>
-      
-    <div class="directions">
-      <h3>My To Do List</h3>
-      <div id="directions-box">
+<!--      <div class="display"></div>-->
+        
+      <div id="to-do-box">
         <ul id="ordered-steps"></ul>
       </div>
-
     </div>
 <!--    <div type   string" class="testbox"></div>-->
   <script src="app.js"></script>         
