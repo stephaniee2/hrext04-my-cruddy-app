@@ -88,16 +88,17 @@ const addToList = function(text){
     });
     
     
-//   $(".del-task-btn").on("click", function() {
-//     alert('are you sure you want to start a new list? Your data will not be saved.'); 
+   $(".del-task-btn").on("click", function() {
+     alert('are you sure you want to start a new list?'); 
 //       console.log(localStorage.tasks);
+       
+    //remove each task individually
 //     let filteredArr = (JSON.parse(localStorage.tasks)).filter(item => item !== $("#deleteTasks").val());
 //     localStorage.tasks = filteredArr;
-////     localStorage.removeItem($("#deleteTasks").val()); 
-//     if(ul === ($("#deleteTasks").val())){
-//         ul.remove();
-//     }
+//  
+    //remove all tasks from the list
+    $("li").remove();
 //     $("#deleteTasks").val("");
-//     $("#tasks").val("");
-//   });
+     $("#tasks").val("");
+   });
 });

@@ -1,8 +1,9 @@
 body {
-    background-image: url('http://humortechblog.com/wp-content/uploads/2015/09/sad-frog.png');
+    background-image: url('https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?cs=srgb&dl=dish-egg-food-54455.jpg&fm=jpg');
+    background-size:100%;
     background-repeat: no-repeat;
-/*    background-attachment: fixed;*/
-    background-size: 800px 500px;
+/*    background-size: cover;*/
+    
 }
 
 .to-do {
@@ -12,13 +13,38 @@ body {
 /*    flex-direction: wrap;*/
     text-align: center;
 }
-.ingredients{
-/*    display: inline;*/
+ 
+h3, ul {
+        color: white;
+}
+h3{
+    font-family: 'Homemade Apple', cursive;
+    font-size: 50px
+}
+ul{
+    font-family: 'Lato', sans-serif;
+    font-weight:700;
+    font-size: 26px
+}
+#to-do-tasks{
+    list-style-type: none;
 }
 #directions-box{
     border-style: solid;
     border-width: 5px;   
 }
 button{
-    margin: 10px;
+    margin: 15px;
+    padding: 6px;
+        font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+}
+#tasks{
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+#tasks, button{
+    border-radius: 8px;
 }
