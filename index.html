@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.21/c3.js
 "></script>
-  <script src="app.js"></script>
+
 </head>
 
 <body>
@@ -21,22 +21,24 @@
     <div class="ingredients">
       <div id="chart"></div>
       <script src="chart.js"></script>
-      <input type="string" class="ingredient" placeholder="Enter ingredient">
-      <input type="number" class="cups" placeholder="Enter cups">
-      <button class="add-ingred-btn" >add text</button>
-      <button class="del-ingred-btn">delete text</button>
+        <form>
+      <input type="string" id="tasks" placeholder="Enter task">
+      <input type="number" id="hours" placeholder="Enter hours">
+        </form>
+      <button class="add-task-btn" >add text</button>
+      <button class="del-task-btn">delete text</button>
       <div class="display"></div>
     </div>
       
     <div class="directions">
       <h3>My To Do List</h3>
       <div id="directions-box">
-        <ol id="ordered-steps"></ol>
+        <ul id="ordered-steps"></ul>
       </div>
 
     </div>
-    <div type   string" class="testbox"></div>
-         
+<!--    <div type   string" class="testbox"></div>-->
+  <script src="app.js"></script>         
                                                    
 </body>
 </html>

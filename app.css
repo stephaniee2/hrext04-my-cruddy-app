@@ -1,18 +1,11 @@
 .recipe-box {
     border-style: solid;
     border-width: 5px;
-    display: flex;
-    flex-direction: wrap;
+/*    display: flex;*/
+/*    flex-direction: wrap;*/
 }
 .ingredients{
 /*    display: inline;*/
-}
-#chart{
-/*    display:inline;*/
-    margin-left: -200px;
-    margin-bottom: 40px;
-    margin-top: 40px;
-    
 }
 #directions-box{
     border-style: solid;

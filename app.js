@@ -1,19 +1,43 @@
 $(document).ready(function() {
     
+// store values
+let inputTask = $("#tasks").val();
+let inputHours = $("#hours").val();
     
 const form = document.querySelector('form');
 const ul = document.querySelector('ul');
 const button = document.querySelector('button');
-const input = document.getElementById('item');
+const input = document.getElementById('tasks');
+
+let taskArray = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
     
+localStorage.setItem('tasks', JSON.stringify(taskArray));
+const data = JSON.parse(localStorage.getItem('tasks'));    
 
-  $(".add-ingred-btn").on("click", function(event){
+//function that creates a list element
+const addToList = function(text){ 
+    const li = document.createElement('li');
+      li.textContent = text;
+      ul.appendChild(li);
+    };
 
-      // store values
-      let inputIngredient = $(".ingredient").val();
-      let inputCups = $(".cups").val();
+
+    
+   
+ 
+    
+  $(".add-task-btn").on("click", function(event){
+      let inputTask = $("#tasks").val();
+      let inputHours = $("#hours").val();
       
-    localStorage.setItem(inputIngredient, inputCups);
+    event.preventDefault();  
+      
+    //adding task to localstorage  
+    taskArray.push(inputTask);
+    localStorage.setItem('tasks', JSON.stringify(taskArray));
+    addToList(inputTask);
+      
+      
     // data-
     // let itemHtml = '<div class="display-item" data-storage-key="'
     // +inputIngredient+'"> ' + inputCups + ' ' 
@@ -25,53 +49,31 @@ const input = document.getElementById('item');
 
     chart.load({
       columns:[
-        [inputIngredient, inputCups]
+        [inputTask, inputHours]
       ]
     });
-    console.log('user input ', inputIngredient, inputCups);
+      
+//    console.log('user input ', inputTask, inputHours);
 
         // clear values
-        $(".ingredient").val("");
-        $(".cups").val("");
+    $("#tasks").val("");
+    $("#hours").val("");
+      
+ 
   });
     
+   
 
-//  function newElement() {
-//    var value = $('.direction').val();
-//    var li = document.createElement("li");
-//    // var inputValue = document.getElementsByClassName("direction").value;
-//    var t = document.createTextNode(value);
-//    li.appendChild(t);
-//    if (value === '') {
-//      alert("You must write something!");
-//    } else {
-//      document.getElementById("ordered-steps").appendChild(li);
-//    }
-//    // document.getElementsById("ordered-steps").value = "";
-//  
-//    var span = document.createElement("SPAN");
-//    var txt = document.createTextNode("\u00D7");
-//    span.className = "close";
-//    span.appendChild(txt);
-//    li.appendChild(span);
-//  
-//    for (i = 0; i < close.length; i++) {
-//      close[i].onclick = function() {
-//        var div = this.parentElement;
-//        div.style.display = "none";
-//      }
-//    }
-//  }
-  
-
-//  $(".add-direction-btn").on("click", function(event){
-//    return newElement()
-//  })
-
+    
+    data.forEach(function(item){
+        addToList(item);
+    });
+    
+    
    $(".del-text-btn").on("click", function() {
      alert('item deleted? check the console'); // maybe change to a window.confirm
      localStorage.removeItem( $('.user-input-title').val() ); // grab the title and plop here
-     $(".ingredient").val("");
+     $("#tasks").val("");
      $(".user-input-body").val("");
    });
 
